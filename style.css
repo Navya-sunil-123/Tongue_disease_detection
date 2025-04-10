@@ -1,0 +1,334 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Upload section styles */
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.upload-box {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    border: 2px dashed #3498db;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-box.highlight-dropzone {
+    animation: pulse 2s infinite;
+}
+
+.upload-box.has-preview {
+    border-style: solid;
+}
+
+.upload-box:hover {
+    border-color: #2980b9;
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.upload-box.highlight {
+    border-color: #27ae60;
+    background-color: #f1f9f5;
+}
+
+.upload-content {
+    text-align: center;
+}
+
+.upload-content img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+}
+
+#previewImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+button {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button.active {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.active:hover {
+    background-color: #219a52;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.prediction-result p.diabetes {
+    color: #e74c3c;
+}
+
+.prediction-result p.normal {
+    color: #27ae60;
+}
+
+.probability-bar-fill.diabetes {
+    background-color: #e74c3c;
+}
+
+.probability-bar-fill.normal {
+    background-color: #27ae60;
+}
+
+/* Results section styles */
+.results-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.results-container h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.prediction-result {
+    margin-bottom: 2rem;
+}
+
+.prediction-result h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.prediction-result p {
+    font-size: 1.2rem;
+    color: #3498db;
+    font-weight: 500;
+}
+
+/* Probability chart styles */
+.probability-chart {
+    margin-bottom: 2rem;
+}
+
+.probability-chart h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.probability-bar {
+    margin-bottom: 0.5rem;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.probability-bar-fill {
+    height: 25px;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+}
+
+.probability-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+/* SHAP analysis styles */
+.shap-analysis {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.shap-analysis h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.shap-analysis img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.shap-explanation {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.shap-legend {
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.shap-legend li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.color-box {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.color-box.red {
+    background-color: #e74c3c;
+}
+
+.color-box.blue {
+    background-color: #3498db;
+}
+
+/* Loading overlay styles */
+.loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(52, 152, 219, 0.2);
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error message styling */
+.error-message {
+    color: #e74c3c;
+    background-color: #fdf0ed;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    text-align: center;
+    display: none;
+}
+
+/* Success message styling */
+.success-message {
+    color: #27ae60;
+    background-color: #f1f9f5;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    text-align: center;
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .upload-box {
+        height: 200px;
+    }
+
+    .results-section {
+        padding: 1rem;
+    }
+} 
