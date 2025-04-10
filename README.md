@@ -1,1 +1,2 @@
-# Tongue_disease_detection
+# Diabetes_detection_using_tongue
+_images
