@@ -1,2 +1,1 @@
-# Diabetes_detection_using_tongue
-_images
+# Diabetes_detection_using_tongue_images
